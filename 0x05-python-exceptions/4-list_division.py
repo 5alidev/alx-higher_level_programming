@@ -3,6 +3,7 @@ def list_division(my_list_1, my_list_2, list_length):
     """divides element by element 2 lists."""
     i = 0
     div = []
+    result = 0
     while i < list_length:
         try:
             n1 = my_list_1[i]
