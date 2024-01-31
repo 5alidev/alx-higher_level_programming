@@ -1,0 +1,30 @@
+This is the module to test 'say_my_name' function.
+
+'say_my_name()' function prints 'My name is <first name> <last name>'
+
+Importing Function:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Normal Test With Normal Values
+	>>> say_my_name("Jon", "Snow")
+	My name is Jon Snow
+
+	>>> say_my_name("Khalid", "Benhamou")
+	My name is Khalid Benhamou
+
+Passing one arg as None:
+	>>> say_my_name("Obito", None)
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+
+	>>> say_my_name(None, "None")
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+Passing Numbers:
+	>>> say_my_name(7, "Ziyech")
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string

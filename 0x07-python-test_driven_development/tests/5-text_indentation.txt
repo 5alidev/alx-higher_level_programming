@@ -1,0 +1,33 @@
+This is the module to test "text_indentation" function.
+The function 'text_indentation()' prints a text with 2 new lines
+	after each of these characters: ., ? and :
+
+Importing the Function:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Passing random text:
+	>>> text_indentation("some random, text here. just to test ? if everything is good. still testing: searching")
+	some random, text here.
+	<BLANKLINE>
+	 just to test ?
+	<BLANKLINE>
+	 if everything is good.
+	<BLANKLINE>
+	 still testing:
+	<BLANKLINE>
+	 searching
+
+Passing empty String:
+	>>> text_indentation("")
+	<BLANKLINE>
+
+Passing a Non String value:
+	>>> text_indentation(12)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string
+	
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string

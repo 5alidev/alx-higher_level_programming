@@ -1,0 +1,75 @@
+# This is the "0-add_integer" module.
+
+The module supplies one function, 'add_integer()'
+
+
+Numbers
+
+'add_integer()' returns the sum of its two args
+the second arg has a default value of 98
+
+Importing the function
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(5, 4)
+	9
+
+
+Non Numbers
+
+if a non number is passed to function, it will throw an exception
+
+Adding float and Integer
+	>>> add_integer(5.2, 2)
+	7
+
+	>>> add_integer(3, 1.5)
+	4
+
+One argument
+	>>> add_integer(1)
+	99
+
+Positive and Negative
+	>>> add_integer(-2, 2)
+	0
+
+	>>> add_integer(3, -4)
+	-1
+
+Integer and Boolean
+	>>> add_integer(2, True)
+	3
+
+	>>> add_integer(True, 1)
+	2
+
+	>>> add_integer(5, False)
+	5
+
+	>>> add_integer(False, 2)
+	2
+
+Boolean and Boolean
+	>>> add_integer(True, True)
+	2
+
+	>>> add_integer(True, False)
+	1
+
+Two Floats
+
+	>>> add_integer(2.2, 3.2)
+	5
+
+Passing None
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+        	...
+	TypeError: a must be an integer
+
+Passing a String
+	>>> add_integer("str", 2)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer

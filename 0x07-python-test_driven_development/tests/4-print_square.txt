@@ -1,0 +1,42 @@
+This is the module to test 'print_square' function.
+The function 'print_square()' takes one argument 'size' as integer
+
+Importing the Function:
+	>>> print_square = __import__('4-print_square').print_square
+
+Passing normal value:
+	>>> print_square(3)
+	###
+	###
+	###
+
+	>>> print_square(0)
+	
+
+Passing Non Integer value:
+	>>> print_square('str')
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+	>>> print_square(None)
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+	>>> print_square(3.5)
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+Passing negative value:
+	>>> print_square(-5)
+	Traceback (most recent call last):
+		...
+	ValueError: size must be >= 0
+
+Passing no argument:
+	>>> print_square()
+	Traceback (most recent call last):
+		...
+	TypeError: print_square() missing 1 required positional argument: 'size'
