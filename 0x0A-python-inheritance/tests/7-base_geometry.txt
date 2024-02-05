@@ -1,0 +1,73 @@
+# This module includes only one function `integer_validator()`
+
+** Doctest to test 'integer_validator()' function **
+
+'integer_validator()' => Public Instance Method that  validates value
+
+Importing the Function:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test area() method:
+	>>> bg = BaseGeometry()
+	>>> bg.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
+
+Test Passing normal values to integer_validator():
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", 2)
+	BLANKLINE
+
+Test Passing a non integer value to value argument:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", "John")
+	Traceback (most recent call last):
+		...
+	TypeError: name must be an integer
+
+-> Booleans:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", True)
+	BLANKLINE
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", False)
+	Traceback (most recent call last):
+		...
+	ValueError: name must be greater than 0
+
+Test Passing no argument:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Test Passing more than 2 arguments:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", 2, 6)
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+Test Passing only one argument:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name")
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Test Passing negative value argument or 0:
+-> negative:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", -2)
+	Traceback (most recent call last):
+		...
+	ValueError: name must be greater than 0
+-> 0:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", 0)
+	Traceback (most recent call last):
+		...
+	ValueError: name must be greater than 0
