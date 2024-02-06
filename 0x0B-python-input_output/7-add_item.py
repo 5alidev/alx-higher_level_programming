@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''args to json file'''
 import sys
 import json
 import os.path
