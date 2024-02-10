@@ -103,7 +103,7 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}"\
             .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         '''
         assigns an argument to each attribute
 
@@ -111,16 +111,23 @@ class Rectangle(Base):
             args: list of arguments
         '''
 
-        if len(args) > 0 and args[0] is not None:
-            self.id = args[0]
-        if len(args) > 1 and args[1] is not None:
-            self.__width = args[1]
-        if len(args) > 2 and args[2] is not None:
-            self.__height = args[2]
-        if len(args) > 3 and args[3] is not None:
-            self.__x = args[3]
-        if len(args) > 4 and args[4] is not None:
-            self.__y = args[4]
+        if args and len(args) > 0:
+            if len(args) > 0 and args[0] is not None:
+                self.id = args[0]
+            if len(args) > 1 and args[1] is not None:
+                self.__width = args[1]
+            if len(args) > 2 and args[2] is not None:
+                self.__height = args[2]
+            if len(args) > 3 and args[3] is not None:
+                self.__x = args[3]
+            if len(args) > 4 and args[4] is not None:
+                self.__y = args[4]
+        elif kwargs:
+            self.id = kwargs.get("id", self.id)
+            self.__width = kwargs.get("width", self.__width)
+            self.__height = kwargs.get("height", self.__height)
+            self.__x = kwargs.get("x", self.__x)
+            self.__y = kwargs.get("y", self.__y)
 
     def checkIfInteger(self, value, name):
         '''
