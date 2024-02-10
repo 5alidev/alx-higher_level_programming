@@ -70,6 +70,7 @@ class Base:
         '''
         returns an instance with all attributes already set
         '''
+
         from models.rectangle import Rectangle
         from models.square import Square
         if cls.__name__ == 'Rectangle':
@@ -78,3 +79,16 @@ class Base:
             dummy = Square(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        '''
+        returns a list of instances
+        '''
+
+        from os import path
+        filename = "{}.json".format(cls.__name__)
+        if not path.isfile(filename):
+            return []
+        with open(filename, 'r') as f:
+            return [cls.create(**d) for d in cls.from_json_string(f.read())]
