@@ -129,6 +129,19 @@ class Rectangle(Base):
             self.__x = kwargs.get("x", self.__x)
             self.__y = kwargs.get("y", self.__y)
 
+    def to_dictionary(self):
+        '''
+        return a dictionary representation of Rectangle
+        '''
+
+        return {
+                'x': self.__x,
+                'y': self.__y,
+                'id': self.id,
+                'height': self.__height,
+                'width': self.__width
+                }
+
     def checkIfInteger(self, value, name):
         '''
         check if a value is an integer, if not raises Exception
