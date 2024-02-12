@@ -19,7 +19,6 @@ class TestBaseClass(unittest.TestCase):
         instantiates class
         '''
         Base._Base__nb_objects = 0
-        pass
 
     def tearDown(self):
         '''
