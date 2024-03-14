@@ -2,4 +2,11 @@
 -- that can be found in the database hbtn_0d_usa
 
 USE hbtn_0d_usa;
-SELECT * FROM cities c, states s WHERE c.state_id = s.id AND s.name = 'California' ORDER BY c.id; 
+SELECT id, name
+FROM cities
+WHERE state_id = (
+	SELECT id
+	FROM states
+	WHERE name = 'California'
+)
+ORDER BY id;
