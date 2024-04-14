@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 ''' script that adds the State object “Louisiana” '''
 import sys
-from model_state import Base, State
+from model_state import State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
@@ -12,8 +12,6 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for state in session.query(State):
-        if "a" in state.name:
-            session.delete(state)
+    for state in session.query(State).filter(State.name.like('%a%')):
+        session.delete(state)
     session.commit()
-    session.close()
