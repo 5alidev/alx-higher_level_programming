@@ -1,7 +1,9 @@
 # ALX - 0x15. JavaScript - Web jQuery
 
 ## Tasks:
+
 ### Mandatory
+
 - 0. No JQuery
 - 1. With JQuery
 - 2. Click and turn red
@@ -12,4 +14,10 @@
 - 7. Star wars character
 - 8. Star Wars movies
 - 9. Say Hello!
+
 ### Optional
+
+- 10. No jQuery - document loaded
+- 11. List, add, remove
+- 12. Say hello to everybody!
+- 13. And press ENTER
